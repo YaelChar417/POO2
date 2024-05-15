@@ -15,4 +15,7 @@ Lo que se espera que se haga son los métodos de clases, para una mejor explicac
 - **Bebida:** tiene sus setters y getters para sus atributos, los atributos y metodos de la clase padre y un metodo que permita agregar hielo a su bebida.
 
 ## Casos que harían que dejara de funcionar:
-- Algun parametro ingresado de mala manera, por ejemplo alguna cadena de 
+- Algun parametro ingresado de mala manera: por ejemplo en lugar de ingresar un entero ingresar un float y viceversa.
+- Tamaño invalido en una cadena de caracteres: en una cadena de caracteres ingresar un tamaño superior al que esta permitido.
+- El uso de la Ñ: ya que c++ no permite usar esta letra.
+- El uso de numeros negativos: cosas como precio o cantidad que sean negativas, quizá se permita su uso pero en ese caso el resultado no tendría ningun sentido.
