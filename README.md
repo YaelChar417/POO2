@@ -20,3 +20,4 @@ Lo que se espera que se haga son los métodos de clases, para una mejor explicac
 - Tamaño invalido en una cadena de caracteres: en una cadena de caracteres ingresar un tamaño superior al que esta permitido.
 - El uso de la Ñ: ya que c++ no permite usar esta letra.
 - El uso de numeros negativos: cosas como precio o cantidad que sean negativas, quizá se permita su uso pero en ese caso el resultado no tendría ningun sentido.
+- Si se ingresan strings con espacios de separación, ejemplo: Yael Charles, se recomienda usar _ o - por si es indispensable separar palabras.
