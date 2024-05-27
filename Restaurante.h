@@ -37,8 +37,8 @@ class Restaurante{
 	private:
 		string nom_restaurante;
 		Persona cliente[50];
-		Comida lista_c[100];
-		Bebida lista_b[100];
+		Comida lista_c[10];
+		Bebida lista_b[10];
 	public:
 		// Constructores de la clase Restaurante
 		Restaurante(): nom_restaurante(""){};
@@ -92,16 +92,16 @@ void Restaurante::agrega_bebida(Bebida bebida){
 void Restaurante::muestra_menu(int n){
 	cout << "|| --- M  e  n  u     d  e     c  o  m  i  d  a  s --- ||" << endl;
 	for(int i = 0; i < n; i++)
-	{
-		cout << "ORDEN " << i+1 << endl;
-		lista_c[i].mostrar_datosc();
-		cout << "\n";
-	}
+    {
+        cout << "ORDEN " << i+1 << endl;
+        lista_c[i].mostrar_datos();
+        cout << "\n";
+    }
 	cout << "|| --- M  e  n  u     d  e     b  e  b  i  d  a  s  --- ||" << endl;
 	for(int i = 0; i < n; i++)
 	{
 		cout << "BEBIDA " << i+1 << endl;
-		lista_b[i].mostrar_datosb();
+		lista_b[i].mostrar_datos();
 		cout << "\n";
 	}
 }

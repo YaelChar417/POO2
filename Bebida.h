@@ -37,7 +37,7 @@ class Bebida:public Pedido {
 		void set_onzas(float onz);
 		void set_hielo(bool hie); 
 		//metodos de la clase.
-		void mostrar_datosb();
+		void mostrar_datos();
 		void agregar_hielo(bool hie);
 		float calcula_total(bool hie, int ca, float c);
 		float calcula_total(float onz, float c, int ca);
@@ -59,8 +59,8 @@ void Bebida::set_hielo(bool hie){
 }
 /*-----------FIN DE LOS SETTERS-----------*/
 /*---------INICIO DE LOS METODOS----------*/
-void Bebida::mostrar_datosb(){
-	mostrar_datos();
+void Bebida::mostrar_datos(){
+	cout << "Orden: " << get_orden() << "	||	" << "Costo: " << get_costo() << "	||	" << "Cantidad: " << get_cantidad() << endl;
 	cout << "Onzas: " << get_onzas() << "	||	" << "hielo: " << get_hielo() << endl;
 }
 void Bebida::agregar_hielo(bool hie){

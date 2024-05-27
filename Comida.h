@@ -37,7 +37,7 @@ class Comida:public Pedido {
 		void set_tamanio(string t);
 		void set_vegano(bool v);
 		//metodos de la clase:
-		void mostrar_datosc();
+		void mostrar_datos();
 		void cambiar_vegano(bool v);
 		float calcula_total(float c, int ca, bool v);
 		float calcula_total(string t, float c, int ca);		
@@ -59,8 +59,8 @@ void Comida::set_vegano(bool v){
 }
 /*-----------FIN DE LOS SETTERS-----------*/
 /*---------INICIO DE LOS METODOS----------*/
-void Comida::mostrar_datosc(){
-	mostrar_datos();
+void Comida::mostrar_datos(){
+	cout << "Orden: " << get_orden() << "	||	" << "Costo: " << get_costo() << "	||	" << "Cantidad: " << get_cantidad() << endl;
 	cout << "Tamanio: " << get_tamanio() << "	||	" << "Pedido vegano: " << get_vegano() << endl;
 }
 void Comida::cambiar_vegano(bool v){

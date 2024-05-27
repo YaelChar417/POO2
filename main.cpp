@@ -98,7 +98,7 @@ int main() {
 				cout << "Que numero de comida te gustaria ordenar: "; cin >> index_lista; cout << endl;
 				if(index_lista >= 1 && index_lista <=3) // verifica que el numero ingresado se encuentre en la lista
 				{
-					lista_c[index_lista - 1].mostrar_datosc(); // muestra los datos de la comida que eligio
+					lista_c[index_lista - 1].mostrar_datos(); // muestra los datos de la comida que eligio
 				}else // no reconocio el numero en la lista
 				{
 					cout << "comida no reconocida..." << endl;
@@ -123,7 +123,7 @@ int main() {
 				cout << "Que numero de bebida te gustaria ordenar: "; cin >> index_lista; cout << endl;
 				if(index_lista >= 1 && index_lista <= 3) // verifica que el numero ingresado se encuentre en la lista
 				{
-					lista_b[index_lista - 1].mostrar_datosb();
+					lista_b[index_lista - 1].mostrar_datos();
 				}else // no reconocio el numero en la lista
 				{
 					cout << "bebida no reconocida..." << endl;
