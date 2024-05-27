@@ -1,6 +1,9 @@
 # Proyecto: Gestión de Restaurante.
 Un restaurante familiar de nombre Charl´s quiere un programa que les permita tener más control con sus clientes y pedidos, este restaurante cuenta con un menú ya establecido de comida italiana y unas bebidas fuera de este mundo así como con una capacidad máxima para 50 clientes. En este proyecto recrearemos usando el lenguaje de c++ esta simulación.
 
+## Correcciones realizadas
+- Se le puso el mismo nombre a los metodos **calcula_costo** y **muestra_datos** para que de esta forma cumpla como sobreescritura correctamente.
+
 ## UML (diagrama de clases).
 En el UML se encuentran 5 clases (Restaurante, Pedido, Persona, Comida, Bebida), a continuación se explicarán las relaciones entre clases para dar a comprender el porque se colocaron de esta forma.
 - **Relación de Composición:** La clase Persona compone a la clase de Restaurante, debido a que las personas actuarían como nuestros clientes y sin el restaurante no puede haber clientes.
