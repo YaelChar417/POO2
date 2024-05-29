@@ -29,6 +29,7 @@ class Pedido {
 		// Constructores de la clase
 		Pedido(): orden(""), costo(0.0), cantidad(0){};
 		Pedido(string o, float c, int ca): orden(o), costo(c), cantidad(ca){};
+		virtual ~Pedido(){}; // Destructor de clase que hace polimorfismo
 		// getters de la clase
 		string get_orden();
 		float get_costo();
@@ -38,8 +39,8 @@ class Pedido {
 		void set_costo(float c);
 		void set_cantidad(int ca);
 		//metodos de la clase
-		float calcula_total(float c, int ca);
-		void mostrar_datos();
+		virtual float calcula_total(float c, int ca);
+		virtual void mostrar_datos();
 };
 /*----------INICIO DE LOS GETTERS----------*/
 string Pedido::get_orden(){

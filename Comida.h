@@ -30,6 +30,7 @@ class Comida:public Pedido {
 		// contructores de la clase Comida con los atributos de la clase Pedido.
 		Comida(): Pedido(), tamanio(""), vegano(0){};
 		Comida(string o, float c, int ca, string t, bool v): Pedido(o,c,ca), tamanio(t), vegano(v){};
+		~Comida(){}; // Destructor de clase
 		// getters de la clase
 		string get_tamanio();
 		bool get_vegano();
@@ -39,7 +40,7 @@ class Comida:public Pedido {
 		//metodos de la clase:
 		void mostrar_datos();
 		void cambiar_vegano(bool v);
-		float calcula_total(float c, int ca, bool v);
+		float calcula_total(float c, int ca);
 		float calcula_total(string t, float c, int ca);		
 };
 /*----------INICIO DE LOS GETTERS----------*/
@@ -69,9 +70,9 @@ void Comida::cambiar_vegano(bool v){
 		set_vegano(true);
 	}
 }
-float Comida::calcula_total(float c, int ca, bool v){
+float Comida::calcula_total(float c, int ca){
 	float precio = 0.0;
-	if(v != 1)
+	if(get_vegano() != 1)
 	{
 		precio = c * ca;
 	}else

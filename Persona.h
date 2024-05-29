@@ -30,6 +30,7 @@ class Persona{
 		// Constructores de la clase persona con sus atributos propios
 		Persona(): nombre(""), edad(0), dinero(0.0){};
 		Persona(string n, int e, float d): nombre(n), edad(e), dinero(d){};
+		~Persona(){}; // Destructor de clase
 		// getters de la clase
 		string get_nombre();
 		int get_edad();
@@ -40,6 +41,7 @@ class Persona{
 		void set_dinero(float d);
 		// metodos de la clase
 		void mostrar_datos();
+		float pagar(float t);
 };
 /*----------INICIO DE LOS GETTERS----------*/
 string Persona::get_nombre(){
@@ -68,6 +70,18 @@ void Persona::mostrar_datos(){
 	cout << "Nombre: " << get_nombre() << endl;
 	cout << "Edad: " << get_edad() << endl;
 	cout << "Dinero: " << get_dinero() << endl; 
+}
+float Persona::pagar(float t){
+	float cambio = 0;
+	cambio = get_dinero() - t;
+	if (cambio <= 0)
+	{
+		cout << "No tienes suficiente dinero, mejor vete poniendo a lavar platos..." << endl;
+		return cambio = -1;
+	}else
+	{
+		return cambio;
+	}
 }
 /*------------FIN DE LOS METODOS-----------*/
 

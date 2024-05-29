@@ -32,27 +32,26 @@ using namespace std;
 /*-comida y bebida respectivamente-*/
 int c = 0;
 int b = 0;
-	
 class Restaurante{
 	private:
 		string nom_restaurante;
-		Persona cliente[50];
-		Comida lista_c[10];
-		Bebida lista_b[10];
+		vector <Persona> clientes; // vector sin tamaño fijo
+		Pedido *pedidos[10];
+		int index = 0;
 	public:
 		// Constructores de la clase Restaurante
 		Restaurante(): nom_restaurante(""){};
 		Restaurante(string n_r):nom_restaurante(n_r){};
+		~Restaurante(){}; //Destructor de clase
 		// Metodos de la clase Restaurante
-		void recibe_cliente(int num);
+		vector<Persona> recibe_cliente(int num);
 		void mostrar_cliente(int num);
-		void agrega_comida(Comida comida);
-		void agrega_bebida(Bebida bebida);
+		void agrega_pedidos(Pedido *pedido);
 		void muestra_menu(int n);
 		float calcula_costo(Comida comida, Bebida bebida);
 };
 /*---------INICIO DE LOS METODOS----------*/
-void Restaurante::recibe_cliente(int num){
+vector<Persona> Restaurante::recibe_cliente(int num){
 	int num_personas = 0;
 	string n;
 	int e;
@@ -65,43 +64,42 @@ void Restaurante::recibe_cliente(int num){
 		cout << "Dinero del cliente " << i+1 << ": "; cin >> d; cout << endl;
 		if(num_personas < 50)
 		{
-			cliente[i].set_nombre(n);
-			cliente[i].set_edad(e);
-			cliente[i].set_dinero(d);
+			Persona cnt; // crea un objeto persona llamado cnt (cliente) que le agrega sus datos con los setters
+			cnt.set_nombre(n);
+			cnt.set_edad(e);
+			cnt.set_dinero(d);
+			clientes.push_back(cnt); // añade al vector de clientes los clientes
 			num_personas++;
 		}else 
 		{
 			cout << "El restaurante está lleno, por favor espere un momento :)" << endl;
 		}
-	}         
+	}   
+	return clientes; 
 }
 void Restaurante::mostrar_cliente(int num){
 	for(int i = 0; i < num; i++)
 	{
-		cout << "Cliente " << i+1 << ": " << cliente[i].get_nombre() << " ||" << " Edad: " << cliente[i].get_edad() << " || " << " Dinero " << cliente[i].get_dinero() << endl;
+		cout << "Cliente " << i+1 << ": " << clientes[i].get_nombre() << " ||" << " Edad: " << clientes[i].get_edad() << " || " << " Dinero " << clientes[i].get_dinero() << endl;
 	}
 }
-void Restaurante::agrega_comida(Comida comida){
-	lista_c[c] = comida;
-	c++;	
-}
-void Restaurante::agrega_bebida(Bebida bebida){
-	lista_b[b] = bebida;
-	b++;
+void Restaurante::agrega_pedidos(Pedido *pedido){
+	pedidos[index] = pedido;
+	index++;
 }
 void Restaurante::muestra_menu(int n){
 	cout << "|| --- M  e  n  u     d  e     c  o  m  i  d  a  s --- ||" << endl;
 	for(int i = 0; i < n; i++)
     {
         cout << "ORDEN " << i+1 << endl;
-        lista_c[i].mostrar_datos();
+        pedidos[i]->mostrar_datos();
         cout << "\n";
     }
 	cout << "|| --- M  e  n  u     d  e     b  e  b  i  d  a  s  --- ||" << endl;
-	for(int i = 0; i < n; i++)
+	for(int i = 3; i < n+3; i++)
 	{
 		cout << "BEBIDA " << i+1 << endl;
-		lista_b[i].mostrar_datos();
+		pedidos[i]->mostrar_datos();
 		cout << "\n";
 	}
 }

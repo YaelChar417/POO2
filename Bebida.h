@@ -30,6 +30,7 @@ class Bebida:public Pedido {
 		// Constructores de la clase Bebida con los atributos de la clase Pedido.
 		Bebida(): Pedido(), onzas(0.0), hielo(0){};
 		Bebida(string o, float c, int ca, float onz, bool hie): Pedido(o,c,ca), onzas(onz), hielo(hie){};
+		~Bebida(){}; // Destructor de clase
 		// getters de la clase bebida.
 		float get_onzas();
 		bool get_hielo();
@@ -39,7 +40,7 @@ class Bebida:public Pedido {
 		//metodos de la clase.
 		void mostrar_datos();
 		void agregar_hielo(bool hie);
-		float calcula_total(bool hie, int ca, float c);
+		float calcula_total(float c, int ca);
 		float calcula_total(float onz, float c, int ca);
 };
 /*----------INICIO DE LOS GETTERS----------*/
@@ -69,9 +70,9 @@ void Bebida::agregar_hielo(bool hie){
 		set_hielo(1);
 	}
 }
-float Bebida::calcula_total(bool hie, int ca, float c){
+float Bebida::calcula_total(float c, int ca){
 	float precio = 0.0;
-	if(hie != 1)
+	if(get_hielo() != 1)
 	{
 		precio = c * ca;
 	}else
