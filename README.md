@@ -1,6 +1,20 @@
 # Proyecto: Gestión de Restaurante.
 Un restaurante familiar de nombre Charl´s quiere un programa que les permita tener más control con sus clientes y pedidos, este restaurante cuenta con un menú ya establecido de comida italiana y unas bebidas fuera de este mundo así como con una capacidad máxima para 50 clientes. En este proyecto recrearemos usando el lenguaje de c++ esta simulación.
 
+## Funcionamiento actual
+El programa sigue los siguientes pasos:
+
+1.- El programa pide que ingreses cuantos clientes van a llegar, como sugerencia no ingresar numeros muy altos en primera para no estar ingresando muchas entradas y en segunda porque el limite de clientes a la vez es 50.
+2.- Llenar los datos de los n clientes que decida el usuario, estos son: Nombre de tipo string, Edad de tipo int, Dinero de tipo float.
+3.- El programa pregunta si el cliente n desea pedir una comida.
+3.1.- En caso de decir que si (1) el programa pregunta por el numero de comida que te gustaria ordenar del menu, **van del 1 al 3** y muestra sus datos de la comida así como su subtotal.
+3.2.- En caso de decir que no (0) el programa continua.
+4.- El programa pregunta si el n cliente desea pedir una bebida.
+4.1.- En caso de decir que si (1) el programa pregunta por el numero de bebida que te gustaría ordenar del menu, **van del 4 al 6** y muestra sus datos de la bebida así como el total de la compra y llama la funcion de pagar que calcula el cambio que se le regresa al cliente.
+4.2.- En caso de decir que no (0) el programa finalizará, no sin antes darle su cambio al cliente.
+5.- El programa sigue repitiendo los pasos del 3 al 4 si **n > 1.**
+6.- Fin del programa
+
 ## Correcciones realizadas
 - Se le puso el mismo nombre a los metodos **calcula_costo** y **muestra_datos** para que de esta forma cumpla como sobreescritura correctamente.
 
@@ -36,8 +50,8 @@ Lo que se espera que se haga son los métodos de clases, para una mejor explicac
 - **Bebida:** tiene sus setters y getters para sus atributos, los atributos y metodos de la clase padre y un metodo que permita agregar hielo a su bebida y el calculo del precio que dependa de factores como el tamaño o si tiene hielo.
 
 ## Casos que harían que dejara de funcionar:
-- Algun parametro ingresado de mala manera: por ejemplo en lugar de ingresar un entero ingresar un float y viceversa.
-- Tamaño invalido en una cadena de caracteres: en una cadena de caracteres ingresar un tamaño superior al que esta permitido.
-- El uso de la Ñ: ya que c++ no permite usar esta letra.
-- El uso de numeros negativos: cosas como precio o cantidad que sean negativas, quizá se permita su uso pero en ese caso el resultado no tendría ningun sentido.
-- Si se ingresan strings con espacios de separación, ejemplo: Yael Charles, se recomienda usar _ o - por si es indispensable separar palabras.
+- Al momento de pedir cuantos clientes son los que ingresan al restaurante: Ingresar un numero negativo, string o caracter.
+- Cuando se pide el nombre del cliente: Escribir un string con espacios, ejemplo: Yael Charles, como sugerencia optar por: Yael_Charles.
+- Cuando se pide la edad del cliente: Ingresar un numero que sea float (que tenga decimales).
+- Al momento de preguntar si desea ordenar comida o bebida: Ingresar un string o caracter.
+- Al momento de preguntar que numero de comida o bebida desea ordenar: Ingresar un caracter o string.
