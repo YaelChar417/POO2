@@ -4,7 +4,7 @@
 /*---------------Matricula: A01711111----------------*/
 /*-------------Profesor: Benjamin Valdez-------------*/
 /*----Materia: Programacion orientada a objetos 2----*/
-/*-------Fecha de entrega: 23 de mayo de 2024--------*/
+/*-------Fecha de entrega: 06 de junio de 2024--------*/
 /*-----------------------------------------------------.*/
 /*-Clase Persona: La cual es una clase propia que-------*/
 /*-cuenta con atributos como nombre, edad y cantidad----*/
@@ -22,15 +22,17 @@
 using namespace std;
 
 class Persona{
-	private:
+	private: 
+	// atributos de la clase Persona
 		string nombre;
 		int edad;
 		float dinero;
 	public:
 		// Constructores de la clase persona con sus atributos propios
-		Persona(): nombre(""), edad(0), dinero(0.0){};
+		Persona(): nombre(""), edad(0), dinero(0.0){}; // por default
 		Persona(string n, int e, float d): nombre(n), edad(e), dinero(d){};
-		~Persona(){}; // Destructor de clase
+		// Destructor de clase
+		~Persona(){}; 
 		// getters de la clase
 		string get_nombre();
 		int get_edad();
@@ -66,11 +68,30 @@ void Persona::set_dinero(float d){
 }
 /*-----------FIN DE LOS SETTERS-----------*/
 /*---------INICIO DE LOS METODOS----------*/
+
+/*-		 	METODO DE MOSTRAR_DATOS 		
+*
+* Usando los getters de la clase imprime los
+* atributos de la clase Persona
+*
+* @param
+* @return								-*/
 void Persona::mostrar_datos(){
 	cout << "Nombre: " << get_nombre() << endl;
 	cout << "Edad: " << get_edad() << endl;
 	cout << "Dinero: " << get_dinero() << endl; 
 }
+/*-		 	METODO DE PAGAR		
+*
+* Usando el parametro que recibe y el dinero
+* que tiene la persona calcula el cambio 
+* haciendo la resta entre ellos, asimismo
+* si el dinero es insuficiente manda un mensaje
+* de error
+*
+* @param float calculado en el main en base a lo que
+* pidio el usuario, representa el total de la cuenta.
+* @return float con la resta entre el dinero y el total -*/
 float Persona::pagar(float t){
 	float cambio = 0;
 	cambio = get_dinero() - t;

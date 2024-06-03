@@ -4,14 +4,14 @@
 /*---------------Matricula: A01711111----------------*/
 /*-------------Profesor: Benjamin Valdez-------------*/
 /*----Materia: Programacion orientada a objetos 2----*/
-/*-------Fecha de entrega: 23 de mayo de 2024--------*/
+/*-------Fecha de entrega: 06 de junio de 2024-------*/
 /*---------------------------------------------------*/
-/*-Main del proyecto de gestion de hospitales, en----*/
-/*-el cual se pueden realizar pruebas para comprobar-*/
-/*-el funcionamiento de cada clase y ver algunas-----*/
-/*-interacciones.-*/
-/*---------------------------------------------------*/
-
+/*-Main del proyecto de gestion de Restaurante en
+* el cual se crean productos de comida y bebida que se 
+* asignan a un menu y muestra una pequeña recreación de 
+* un  restaurante, en el cual puedes ordenar comida y 
+* bebida donde en base a esto puedes calcular el costo.-*/
+/*------------------------------------------------------*/
 
 /*-Se incluyen las librerias necesarias para leer y -*/
 /*-mostrar variables, asi como manipular strings-----*/
@@ -19,7 +19,7 @@
 #include <string>
 #include <vector>
 using namespace std;
-/*-Se incluyen las clases desarrolladas--------------*/
+/*-		Se incluyen las clases desarrolladas		-*/
 #include "Restaurante.h"
 
 int main() { 
@@ -98,6 +98,9 @@ int main() {
 		{
 			case 0: //el cliente no pidio bebida
 				cout << "Esta perfecto, sin problema..." << endl;
+				cout << "Ahora dale el cambio al cliente: " << endl;
+				cambio = lista_clientes[ciclo].pagar(subtotal);
+				cout << "Su cambio del cliente " << lista_clientes[ciclo].get_nombre() << " es: " << cambio << endl;
 				cout << "trata de usar la opcion 1 para continuar mas :)" << endl;
 				break;
 			
@@ -110,16 +113,16 @@ int main() {
 					subtotal = lista_p[index_lista - 1]->calcula_total(lista_p[index_lista-1]->get_costo(),lista_p[index_lista-1]->get_cantidad());
 					total = total + subtotal;
 					cout << "El total es: " << total << endl;
+					cout << "Ahora dale el cambio al cliente: " << endl;
+					cambio = lista_clientes[ciclo].pagar(total);
+					cout << "Su cambio del cliente " << lista_clientes[ciclo].get_nombre() << " es: " << cambio << endl;
 				}else // no reconocio el numero en la lista
 				{
 					cout << "bebida no reconocida..." << endl;
 				}
+				
 
 		}
-		
-		cout << "Ahora dale el cambio al cliente: " << endl;
-		cambio = lista_clientes[ciclo].pagar(total);
-		cout << "Su cambio del cliente " << lista_clientes[ciclo].get_nombre() << " es: " << cambio << endl;
 		ciclo++; // aumento del contador del ciclo para que termine
 	} while(ciclo < num_clientes); // condicion del ciclo
 	
