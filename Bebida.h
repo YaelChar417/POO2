@@ -73,8 +73,11 @@ void Bebida::set_hielo(bool hie){
 * @param 
 * @return 												-*/
 void Bebida::mostrar_datos(){
-	cout << "Orden: " << get_orden() << "	||	" << "Costo: " << get_costo() << "	||	" << "Cantidad: " << get_cantidad() << endl;
-	cout << "Onzas: " << get_onzas() << "	||	" << "hielo: " << get_hielo() << endl;
+	cout << "Orden: " << get_orden() << "	||	";
+	cout << "Costo: " << get_costo() << "	||	"; 
+	cout << "Cantidad: " << get_cantidad() << "	||	" << endl; 
+	cout << "Onzas: " << get_onzas() << "	||	";
+	cout << "hielo: " << get_hielo() << "	||	" << endl; 
 }
 /*-		 	METODO DE AGREGAR_HIELO 		
 *

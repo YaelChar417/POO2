@@ -42,7 +42,7 @@ class Comida:public Pedido {
 		//metodos de la clase:
 		void mostrar_datos(); // Sobreescrito de la clase Pedido y con polimorfismo
 		void cambiar_vegano(bool v);
-		float calcula_total(float c, int ca); // sobreescrito de la clase Pedido y con polimorfismo
+		float calcula_total(float c, int ca);//sobreescrito de la clase Pedido con polimorfismo
 		float calcula_total(string t, float c, int ca);	// sobrecarga
 };
 /*----------INICIO DE LOS GETTERS----------*/
@@ -73,8 +73,11 @@ void Comida::set_vegano(bool v){
 * @param 
 * @return 												-*/
 void Comida::mostrar_datos(){
-	cout << "Orden: " << get_orden() << "	||	" << "Costo: " << get_costo() << "	||	" << "Cantidad: " << get_cantidad() << endl;
-	cout << "Tamanio: " << get_tamanio() << "	||	" << "Pedido vegano: " << get_vegano() << endl;
+	cout << "Orden: " << get_orden() << "	||	";
+	cout  << "Costo: " << get_costo() << "	||	";
+	cout  << "Cantidad: " << get_cantidad() << "	||	" << endl;
+	cout << "Tamanio: " << get_tamanio() << "	||	";
+	cout  << "Pedido vegano: " << get_vegano() << "	||	" << endl;
 }
 /*-		 	METODO DE CAMBIAR_VEGANO 		
 *

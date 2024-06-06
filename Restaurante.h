@@ -32,9 +32,9 @@ class Restaurante{
 		// Atibutos de la clase Restaurante
 		string nom_restaurante;
 		vector <Persona> clientes; // vector sin tamaño fijo
-		Pedido *pedidos[10];
 		int index = 0;
 	public:
+		Pedido *pedidos[10]; // atributo de clase publica para usarse en el main
 		// Constructores de la clase Restaurante
 		Restaurante(): nom_restaurante(""){};
 		Restaurante(string n_r):nom_restaurante(n_r){};
@@ -97,8 +97,10 @@ vector<Persona> Restaurante::recibe_cliente(int num){
 void Restaurante::mostrar_cliente(int num){
 	for(int i = 0; i < num; i++)
 	{
-		cout << "Cliente " << i+1 << ": " << clientes[i].get_nombre() << " ||" << " Edad: " << clientes[i].get_edad() << " || " << " Dinero " << clientes[i].get_dinero() << endl;
-	}
+		cout << "Cliente " << i+1 << ": " << clientes[i].get_nombre();
+		cout << " ||" << " Edad: " << clientes[i].get_edad();
+		cout << " || " << " Dinero " << clientes[i].get_dinero() << endl; 
+	} 
 }
 /*-		 	METODO DE AGREGAR_PEDIDOS		
 * 
@@ -148,7 +150,8 @@ void Restaurante::muestra_menu(int n){
 * @return float costo que es la suma del precio de la comida y la bebida -*/
 float Restaurante::calcula_costo(Comida comida, Bebida bebida){
 	float costo = 0.0;
-	costo = (comida.get_costo() * comida.get_cantidad()) + (bebida.get_costo() * bebida.get_cantidad());
+	costo = (comida.get_costo() * comida.get_cantidad()) + (bebida.get_costo() 
+	* bebida.get_cantidad());
 	return costo;
 }
 /*------------FIN DE LOS METODOS-----------*/
