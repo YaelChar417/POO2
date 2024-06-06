@@ -1,6 +1,9 @@
 # Proyecto: Gestión de Restaurante.
 Un restaurante familiar de nombre Charl´s quiere un programa que les permita tener más control con sus clientes y pedidos, este restaurante cuenta con un menú ya establecido de comida italiana y unas bebidas fuera de este mundo así como con una capacidad máxima para 50 clientes. En este proyecto recrearemos usando el lenguaje de c++ esta simulación.
 
+## Correcciones realizadas
+- Se le puso el mismo nombre a los metodos **calcula_costo** y **muestra_datos** para que de esta forma cumpla como sobreescritura correctamente.
+
 ## Funcionamiento actual
 El programa sigue los siguientes pasos:
 
@@ -30,9 +33,6 @@ Lo que espero realizar en avances futuros es mejorar el main para que sea más o
 - **Clase Bebida:** void agregar_hielo(bool hie), float calcula_total(float onz, float c, int ca);
 - **Clase Comida:** void cambiar_vegano(bool v), float calcula_total(string t, float c, int ca);
 Como menciono las razones por las cuales estas funciones no estan implementadas es para que el main se mantenga simple y sin tantos bucles que ayuden a mantener un orden en mi codigo.
-
-## Correcciones realizadas
-- Se le puso el mismo nombre a los metodos **calcula_costo** y **muestra_datos** para que de esta forma cumpla como sobreescritura correctamente.
 
 ## Novedades del avance 3
 - Ahora la clase restaurante no se le agregan objetos de la clase Bebida y Comida, sino que se implemento polimorfismo en la clase de Pedido (clase padre de estas ultimas dos), donde ahora restaurante recibe una lista de Pedidos que son objetos de comida y bebida, pero que hace más limpio el codigo debido al polimorfismo.
@@ -99,8 +99,7 @@ En el UML se encuentran 5 clases (Restaurante, Pedido, Persona, Comida, Bebida),
   - **float calcula_total(float c, int ca)** que tiene sobreescritura y calcula el precio de la comida y la aumenta si es vegana.
   - **float calcula_total(float onz, float c, int ca)** metodo con sobrecarga que calcula el total en base las onzas de la bebida.
 
-
-## Casos que harían que dejara de funcionar:
+ ## Casos que harían que dejara de funcionar:
 - Al momento de pedir cuantos clientes son los que ingresan al restaurante: Ingresar un numero negativo, string o caracter.
 - Cuando se pide el nombre del cliente: Escribir un string con espacios, ejemplo: Yael Charles, como sugerencia optar por: Yael_Charles.
 - Cuando se pide la edad del cliente: Ingresar un numero que sea float (que tenga decimales).
