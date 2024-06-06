@@ -60,7 +60,7 @@ class Restaurante{
 *
 * @param int: que actua como el numero de veces que se repetira
 * el ciclo for y que a su vez es el numero de clientes que llegan en total
-* @return arreglo de clientes.													-*/
+* @return arreglo de clientes.-*/
 vector<Persona> Restaurante::recibe_cliente(int num){
 	int num_personas = 0;
 	string n;
@@ -93,7 +93,7 @@ vector<Persona> Restaurante::recibe_cliente(int num){
 * con el uso demlos getters y además de los elementos de la lista creada previamente
 * 
 * @param int: actua como el numero de clientes que quiere mostrar
-* @return 																			-*/
+* @return -*/
 void Restaurante::mostrar_cliente(int num){
 	for(int i = 0; i < num; i++)
 	{
@@ -109,7 +109,7 @@ void Restaurante::mostrar_cliente(int num){
 * pedidos
 * 
 * @param Recibe un objeto de la clase Pedido, con polimorfismo
-* @return 																			-*/
+* @return -*/
 void Restaurante::agrega_pedidos(Pedido *pedido){
 	pedidos[index] = pedido;
 	index++;
@@ -123,7 +123,7 @@ void Restaurante::agrega_pedidos(Pedido *pedido){
 * su metodo de mostrar datos con polimorfismo.
 *
 * @param int: actua como el numero de productos que quiere mostrar
-* @return 																	-*/
+* @return -*/
 void Restaurante::muestra_menu(int n){
 	cout << "|| --- M  e  n  u     d  e     c  o  m  i  d  a  s --- ||" << endl;
 	for(int i = 0; i < n; i++)
@@ -147,7 +147,7 @@ void Restaurante::muestra_menu(int n){
 * calcula el precio multiplicando costo * cantidad y sumandolos. 
 * 
 * @param Objeto de clase comida y Objeto de clase bebida
-* @return float costo que es la suma del precio de la comida y la bebida -*/
+* @return float costo que es la suma del precio de la comida y la bebida-*/
 float Restaurante::calcula_costo(Comida comida, Bebida bebida){
 	float costo = 0.0;
 	costo = (comida.get_costo() * comida.get_cantidad()) + (bebida.get_costo() 

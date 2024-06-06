@@ -80,7 +80,7 @@ void Pedido::set_cantidad(int ca){
 * @param float, int: el primero actua como el 
 * costo y el segundo como la cantidad.
 * @return float del total del pedido, multiplicando
-* el costo por la cantidad						-*/
+* el costo por la cantidad-*/
 float Pedido::calcula_total(float c, int ca){ 
 	float total; 
 	total = c * ca;
@@ -92,9 +92,11 @@ float Pedido::calcula_total(float c, int ca){
 * de orden (nombre del pedido), costo y cantidad
 *
 * @param
-* @return								-*/
+* @return-*/
 void Pedido::mostrar_datos(){
-	cout << "Orden: " << get_orden() << "	||	" << "Costo: " << get_costo() << "	||	" << "Cantidad: " << get_cantidad() << endl;
+	cout << "Orden: " << get_orden() << "	||	";
+	cout << "Costo: " << get_costo() << "	||	"; 
+	cout << "Cantidad: " << get_cantidad() << endl; 
 }
 /*------------FIN DE LOS METODOS-----------*/
 

@@ -71,7 +71,7 @@ void Bebida::set_hielo(bool hie){
 * si el pedido tiene hielo o no.
 *
 * @param 
-* @return 												-*/
+* @return -*/
 void Bebida::mostrar_datos(){
 	cout << "Orden: " << get_orden() << "	||	";
 	cout << "Costo: " << get_costo() << "	||	"; 
@@ -85,7 +85,7 @@ void Bebida::mostrar_datos(){
 * (falso) y lo cambia a que sea 1 (true)
 *
 * @param bool: recibe un 0 o 1 el cual cambia si es 0.
-* @return 												-*/
+* @return -*/
 void Bebida::agregar_hielo(bool hie){
 	if(hie != 1)
 	{
@@ -102,7 +102,7 @@ void Bebida::agregar_hielo(bool hie){
 * @param float, int: donde el float actua como el costo
 * y el int actua como la cantidad
 * @return float precio el cual puede ser modificado 
-* dependiendo si el pedido tiene hielo o no			-*/
+* dependiendo si el pedido tiene hielo o no	-*/
 float Bebida::calcula_total(float c, int ca){
 	float precio = 0.0;
 	if(get_hielo() != 1)

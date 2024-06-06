@@ -71,7 +71,7 @@ void Comida::set_vegano(bool v){
 * si el pedido es vegano o no.
 *
 * @param 
-* @return 												-*/
+* @return -*/
 void Comida::mostrar_datos(){
 	cout << "Orden: " << get_orden() << "	||	";
 	cout  << "Costo: " << get_costo() << "	||	";
@@ -85,7 +85,7 @@ void Comida::mostrar_datos(){
 * (falso) y lo cambia a que sea 1 (true)
 *
 * @param bool: recibe un 0 o 1 el cual cambia si es 0.
-* @return 												-*/
+* @return -*/
 void Comida::cambiar_vegano(bool v){
 	if (v != 1)
 	{
@@ -102,7 +102,7 @@ void Comida::cambiar_vegano(bool v){
 * @param float, int: donde el float actua como el costo
 * y el int actua como la cantidad
 * @return float precio el cual puede ser modificado 
-* dependiendo si el pedido es vegano o no			-*/
+* dependiendo si el pedido es vegano o no-*/
 float Comida::calcula_total(float c, int ca){
 	float precio = 0.0;
 	if(get_vegano() != 1)

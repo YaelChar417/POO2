@@ -111,7 +111,7 @@ int main() {
 				cout << "Orden		Costo		Cantidad " << endl;
 				if(!c_list == 0) // verifica si el cliente si pidio comida para mostrar los datos
 				{
-					cout << charles.pedidos[c_list-1]->get_orden() << "		";
+					cout << charles.pedidos[c_list-1]->get_orden() << "	";
 					cout << charles.pedidos[c_list-1]->get_costo() << "		";
 					cout << charles.pedidos[c_list-1]->get_cantidad() << "		\n";
 				}

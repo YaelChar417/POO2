@@ -75,7 +75,7 @@ void Persona::set_dinero(float d){
 * atributos de la clase Persona
 *
 * @param
-* @return								-*/
+* @return-*/
 void Persona::mostrar_datos(){
 	cout << "Nombre: " << get_nombre() << endl;
 	cout << "Edad: " << get_edad() << endl;
@@ -91,7 +91,7 @@ void Persona::mostrar_datos(){
 *
 * @param float calculado en el main en base a lo que
 * pidio el usuario, representa el total de la cuenta.
-* @return float con la resta entre el dinero y el total -*/
+* @return float con la resta entre el dinero y el total-*/
 float Persona::pagar(float t){
 	float cambio = 0;
 	cambio = get_dinero() - t;
