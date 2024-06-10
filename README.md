@@ -3,6 +3,7 @@ Un restaurante familiar de nombre Charl´s quiere un programa que les permita te
 
 ## Correcciones realizadas
 - Se le puso el mismo nombre a los metodos **calcula_costo** y **muestra_datos** para que de esta forma cumpla como sobreescritura correctamente.
+- Se modificó el UML para mostrar el polimorfismo correctamente y con los atributos adecuados en la clase Restaurante.
 
 ## Funcionamiento actual
 El programa sigue los siguientes pasos:
