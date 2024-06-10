@@ -69,5 +69,4 @@ void Pedido::set_cantidad(int ca){
 	cantidad = ca;
 }
 /*-----------FIN DE LOS SETTERS-----------*/
-
 #endif //FIN DE LA CLASE
