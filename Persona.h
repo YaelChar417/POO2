@@ -97,7 +97,7 @@ float Persona::pagar(float t){
 	cambio = get_dinero() - t;
 	if (cambio <= 0)
 	{
-		cout << "No tienes suficiente dinero, mejor vete poniendo a lavar platos..." << endl;
+		cout << "No tienes suficiente dinero..." << endl;
 		return cambio = -1;
 	}else
 	{

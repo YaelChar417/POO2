@@ -40,10 +40,12 @@ class Comida:public Pedido {
 		void set_tamanio(string t);
 		void set_vegano(bool v);
 		//metodos de la clase:
-		void mostrar_datos(); // Sobreescrito de la clase Pedido y con polimorfismo
 		void cambiar_vegano(bool v);
-		float calcula_total(float c, int ca);//sobreescrito de la clase Pedido con polimorfismo
-		float calcula_total(string t, float c, int ca);	// sobrecarga
+		// Sobreescritos de Pedido con polimorfismo
+		void mostrar_datos(); 
+		float calcula_total(float c, int ca);
+		// sobrecarga
+		float calcula_total(string t, float c, int ca);	
 };
 /*----------INICIO DE LOS GETTERS----------*/
 string Comida::get_tamanio(){

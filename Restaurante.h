@@ -34,7 +34,8 @@ class Restaurante{
 		vector <Persona> clientes; // vector sin tamaño fijo
 		int index = 0;
 	public:
-		Pedido *pedidos[10]; // atributo de clase publica para usarse en el main
+		// atributo de clase publica para usarse en el main
+		Pedido *pedidos[10]; 
 		// Constructores de la clase Restaurante
 		Restaurante(): nom_restaurante(""){};
 		Restaurante(string n_r):nom_restaurante(n_r){};
@@ -51,12 +52,13 @@ class Restaurante{
 
 /*-		 	METODO DE RECIBE_CLIENTE 		
 * 
-* Usa un ciclo for que se repetira dependiendo el numero de veces
-* que desee el usuario, esta funcion crea clientes con sus diferentes atributos
-* para ello pide los atributos de nombre, edad y dinero (pertenecientes a la -
-* clase cliente) y con los setters los añade a un objeto que a su vez se guarda en 
-* una posicion de un arreglo con el comando push_back. El limite de clientes que
-* soporta el restaurante es 50.
+* Usa un ciclo for que se repetira dependiendo el numero
+* de veces que desee el usuario, esta funcion crea clientes 
+* con sus diferentes atributos para ello pide los atributos 
+* de nombre, edad y dinero (pertenecientes a la clase cliente)
+* y con los setters los añade a un objeto que a su vez se guarda 
+* en una posicion de un arreglo con el comando push_back. El 
+* limite de clientes que soporta el restaurante es 50.
 *
 * @param int: que actua como el numero de veces que se repetira
 * el ciclo for y que a su vez es el numero de clientes que llegan en total
@@ -74,7 +76,8 @@ vector<Persona> Restaurante::recibe_cliente(int num){
 		cout << "Dinero del cliente " << i+1 << ": "; cin >> d; cout << endl;
 		if(num_personas < 50)
 		{
-			Persona cnt; // crea un objeto persona llamado cnt (cliente) que le agrega sus datos con los setters
+			// crea un objeto persona llamado cnt (cliente) que le agrega datos con setters
+			Persona cnt; 
 			cnt.set_nombre(n);
 			cnt.set_edad(e);
 			cnt.set_dinero(d);
@@ -82,15 +85,16 @@ vector<Persona> Restaurante::recibe_cliente(int num){
 			num_personas++;
 		}else 
 		{
-			cout << "El restaurante está lleno, por favor espere un momento :)" << endl;
+			cout << "El restaurante está lleno, por favor espere :)" << endl;
 		}
 	}   
 	return clientes; 
 }
 /*-		 	METODO DE MOSTRAR_CLIENTE		
 * 
-* Con un ciclo for muestra los atributos de los clientes de nombre, edad y dinero
-* con el uso demlos getters y además de los elementos de la lista creada previamente
+* Con un ciclo for muestra los atributos de los clientes
+* de nombre, edad y dinero con el uso demlos getters y además 
+* de los elementos de la lista creada previamente
 * 
 * @param int: actua como el numero de clientes que quiere mostrar
 * @return -*/
@@ -116,11 +120,12 @@ void Restaurante::agrega_pedidos(Pedido *pedido){
 }
 /*-		 	METODO DE MUESTRA_MENU		
 * 
-* Mediante un ciclo for muestra los tres primeros elementos de la lista 
-* creada en el main (Comida unicamente) y utiliza polimorfismo para llamar
-* el metodo de mostrar datos correspondiente a la comida, el segundo for 
-* muestra los ultimos elementos de la lista (Bebida unicamente) e igual llama
-* su metodo de mostrar datos con polimorfismo.
+* Mediante un ciclo for muestra los tres primeros elementos 
+* de la lista  creada en el main (Comida unicamente) y utiliza
+* polimorfismo para llamar el metodo de mostrar datos
+* correspondiente a la comida, el segundo for muestra los ultimos
+* elementos de la lista (Bebida unicamente) e igual llama su 
+* metodo de mostrar datos con polimorfismo.
 *
 * @param int: actua como el numero de productos que quiere mostrar
 * @return -*/
@@ -143,8 +148,9 @@ void Restaurante::muestra_menu(int n){
 /*-		 	METODO DE CALCULA_COSTO		
 * 			  METODO SOBRECARGADO
 * 
-* Usando los getters de costo y cantidad de comida y bebida respectivamente
-* calcula el precio multiplicando costo * cantidad y sumandolos. 
+* Usando los getters de costo y cantidad de comida y bebida
+* respectivamente calcula el precio multiplicando
+* costo * cantidad y sumandolos. 
 * 
 * @param Objeto de clase comida y Objeto de clase bebida
 * @return float costo que es la suma del precio de la comida y la bebida-*/

@@ -69,36 +69,5 @@ void Pedido::set_cantidad(int ca){
 	cantidad = ca;
 }
 /*-----------FIN DE LOS SETTERS-----------*/
-/*---------INICIO DE LOS METODOS----------*/
-
-/*-		 	METODO DE CALCULA_TOTAL 		
-*
-* Utiliza los atributos de costo y total, para 
-* multiplicarlos y obtener el total, que se guarda
-* en la varaible con el mismo nombre. Este metodo se sobreescribe.
-*
-* @param float, int: el primero actua como el 
-* costo y el segundo como la cantidad.
-* @return float del total del pedido, multiplicando
-* el costo por la cantidad-*/
-float Pedido::calcula_total(float c, int ca){ 
-	float total; 
-	total = c * ca;
-	return total;
-}
-/*-		 	METODO DE MOSTRAR_DATOS 		
-* 
-* Imprime con el uso de getters los atributos 
-* de orden (nombre del pedido), costo y cantidad
-*
-* @param
-* @return-*/
-void Pedido::mostrar_datos(){
-	cout << "Orden: " << get_orden() << "	||	";
-	cout << "Costo: " << get_costo() << "	||	"; 
-	cout << "Cantidad: " << get_cantidad() << endl; 
-}
-/*------------FIN DE LOS METODOS-----------*/
-
 
 #endif //FIN DE LA CLASE

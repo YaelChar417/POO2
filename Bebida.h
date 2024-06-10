@@ -40,10 +40,12 @@ class Bebida:public Pedido {
 		void set_onzas(float onz);
 		void set_hielo(bool hie); 
 		//metodos de la clase.
-		void mostrar_datos(); // sobreescrito de la clase Pedido y con polimorfismo
 		void agregar_hielo(bool hie); 
-		float calcula_total(float c, int ca); // sobreescrito de la clase Pedido y con polimorfismo
-		float calcula_total(float onz, float c, int ca); // sobrecarga
+		// sobreescritos de Pedido con polimorfismo
+		void mostrar_datos(); 
+		float calcula_total(float c, int ca);
+		 // sobrecarga
+		float calcula_total(float onz, float c, int ca);
 };
 /*----------INICIO DE LOS GETTERS----------*/
 float Bebida::get_onzas(){
