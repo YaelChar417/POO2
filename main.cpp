@@ -52,7 +52,8 @@ int main() {
 	/*Comienzo del programa
 	* Se mostrará una pequeña historia representando clientes ordenando*/
 	// pide los datos de los clientes.
-	cout << "Hola Mesero bienvenido a esta demostracion, el dia de hoy me ayudaras en el trabajo... \n";
+	cout << "Hola Mesero bienvenido a esta demostracion,";
+	cout << "el dia de hoy me ayudaras en el trabajo... \n" << endl;
 	cout << "Mira, ya te han llegado clientes, por favor dime cuantos son: ";
 	cin >> num_clientes; cout <<"\n";
 	vector<Persona> lista_clientes = charles.recibe_cliente(num_clientes);
@@ -78,10 +79,12 @@ int main() {
 				
 			case 1: // el cliente pidio comida
 				cout << "Que numero de comida te gustaria ordenar: "; cin >> c_list;
-				if(c_list >= 1 && c_list <=3) // verifica que el numero ingresado se encuentre en la lista
+				// verifica que el numero ingresado se encuentre en la lista
+				if(c_list >= 1 && c_list <=3) 
 				{
 					// calcula el subtotal del pedido y lo asgina en el contador total
-					subtotal = charles.pedidos[c_list - 1]->calcula_total(charles.pedidos[c_list-1]->get_costo(),
+					subtotal = charles.pedidos[c_list - 1]->calcula_total
+					(charles.pedidos[c_list-1]->get_costo(), 
 					charles.pedidos[c_list-1]->get_cantidad()); // misma linea
 					total = total + subtotal;
 				}else // no reconocio el numero en la lista
@@ -134,8 +137,9 @@ int main() {
 					{
 						charles.pedidos[b_list-1]->mostrar_datos(); // muestra los datos de la comida que eligio
 						// calcula el subtotal de la bebida y lo asgina a total para calcular el cambio
-						subtotal = charles.pedidos[b_list-1]->calcula_total(charles.pedidos[b_list-1]->get_costo(),
-						charles.pedidos[b_list-1]->get_cantidad());
+						subtotal = charles.pedidos[b_list-1]->calcula_total
+						(charles.pedidos[b_list-1]->get_costo(),
+						charles.pedidos[b_list-1]->get_cantidad()); // misma linea
 						total = total + subtotal;
 						cambio = lista_clientes[ciclo].pagar(total);
 					}
